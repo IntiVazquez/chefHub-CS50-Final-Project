@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="bd-masthead mb-3">
+        <h1 class="title">ChefHub</h1>
+        <h2 class="subtitle">Look recipes from around the world</h2>
+    </div>
+    <form action="/recipe" method="post">
+        <section class="gallery min-vh-100">
+            <div class="container-lg">
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                    {% for recipe in recipes %}
+                        <div class="col">
+                            <a href="/recipe/{{ recipe['id'] }}"><img src="{{ recipe['image'] }}" class="gallery-item" style="border-radius: 10px;"></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </form>
+{% endblock %}

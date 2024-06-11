@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Recipes
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+        <div class="mb-3">
+            <input type="text" class="form-control mt-3 mx-auto" name="recipe_name" placeholder="Recipe Name..." style="width: 30%;">
+            <p></p>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row mt-3">
+            {% if recipes %}
+                {% for recipe in recipes %}
+                     <div class="col-md-4 mt-3">
+                        <form action="/recipe/{{ recipe['id'] }}" method="post">
+                            <div class="card p-3 ps-5 pe-5">
+                                <h4 class="text-capitalize text-center">{{ recipe['title'] }}</h4>
+                                <img src="{{ recipe['image'] }}" style="border-radius: 10px;">
+                                <p class="mt-2"></p>
+                                <a href="/recipe/{{ recipe['id'] }}" class= "btn btn-success w-100 mx-auto">Recipe</a>
+                            </div>
+                        </form>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Recipe Not Found...</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

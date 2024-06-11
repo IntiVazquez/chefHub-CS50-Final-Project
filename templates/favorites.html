@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Favorites
+{% endblock %}
+
+{% block main %}
+<div class="bd-masthead mb-3">
+    <h2 class="subtitle">Favorites</h2>
+</div>
+
+    <!-- Gallery -->
+    <div class="row">
+        {% for recipe in favorites_list %}
+            <div class="col-lg-4 mb-4 mb-lg-0 hover-overlay">
+                <a href="/recipe/{{ recipe['recipe_id'] }}">
+                    <img src="{{ recipe['recipe_img'] }}" class="w-100 shadow-1-strong rounded mb-4" alt="{{ recipe['recipe_name'] }}"/>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+  <!-- Gallery -->
+  
+{% endblock %}

@@ -1,0 +1,110 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #0072CE;
+}
+
+nav .navbar-brand .green {
+    color: #43B02A;
+}
+
+/* Show Recipes in Index */
+img {
+    max-width: 100%;
+}
+
+.gallery {
+    padding: 80px 0;
+}
+
+.gallery img {
+    background-color: #43B02A;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Title and subtitle */
+
+.title {
+    font-size: 800%;
+    line-height: 120%;
+    color: #43B02A;
+    padding: 15px;
+}
+
+.subtitle {
+    color: #0072CE;
+}
+
+/* Stylace the recipe page */
+
+.main-recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-recipe {
+    border-radius: 25px;
+    width: 70%;
+    padding: 3rem;
+    box-shadow: 10px 10px 40px 2px #43B02A;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-container h1 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: #2c2c2c;
+}
+
+.content-container p {
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: #444444;
+    width: 50rem;
+}
+
+.img {
+    transform: translateX(100px);
+    margin-top: 1rem;
+    width: 450px;
+    height: 450px;
+    border-radius: 300px;
+}
+
+li.nostyle {
+    list-style-type: none;
+  }
+
+.ingredients {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.ingredients span {
+    display: inline-block;
+    flex-wrap: wrap;
+    list-style: none;
+    
+}
+
+.ing {
+    display:inline;
+    padding: 10px 20px;
+    border: 2px solid #0072CE;
+    color: #0072CE;
+    font-family: sans-serif;
+    border-radius: 100px;
+}

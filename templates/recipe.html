@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recipes
+{% endblock %}
+
+{% block main %}
+    <div class="main-recipe">
+        <div class="container-recipe">
+            <div class="content-container">
+                <h1 class="title-recipe">{{ recipe['title'] }}</h1>
+                <ol>
+                    <li class="nostyle">Instrucions:</li>
+                    <li class="nostyle"><p></p></li>
+                    <!-- Show Steps -->
+                    {% for step in recipe['analyzedInstructions'][0]['steps'] %}
+                        <li class="nostyle"><p>{{ step['step'] }}</p></li>
+                    {% endfor %}
+                    {% if session["user_id"] %}
+                        <li class="nostyle">
+                            <form action="/recipe/{{ recipe['id'] }}" method="post">
+                                {% if favorite %}
+                                    <button type="submit" class="btn btn-warning">Favorite</button>
+                                {% else %}
+                                    <button type="submit" class="btn btn-secondary">Favorite</button>
+                                {% endif %}
+                            </form>
+                        </li>
+                    {% endif %}
+                </ol>
+            </div>
+            <img class="img" src="{{ recipe['image'] }}"></div>
+        </div>
+        <div>
+            <section class="ingredients">
+                <!-- Show ingredients -->
+                {% for ingredient in  recipe['extendedIngredients'] %}
+                    <span class="ing">{{ ingredient['name'].capitalize() }}</span>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+{% endblock %}
