@@ -16,7 +16,7 @@ Session(app)
 connection = pymysql.connect(
     host = 'localhost',
     user = 'root',
-    password = '********************',
+    password = '****************', # Enter your MySQL password
     database = 'chefhub',
     cursorclass = pymysql.cursors.DictCursor)
 
